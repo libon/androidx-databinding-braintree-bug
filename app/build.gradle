@@ -32,11 +32,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-beta01'
     implementation 'com.google.android.material:material:1.0.0'
 
-    // comment out the braintree dependency to get rid of this compilation error:
-
-    // Execution failed for task ':app:compileDebugJavaWithJavac'.
-    // > android.databinding.tool.util.LoggedErrorException: Found data binding errors.
-    // Unknown class: java.lang.String
-    // file:///private/tmp/myapp/MyApplication/app/src/main/res/layout/activity_main.xml Line:28
-    implementation 'com.braintreepayments.api:braintree:2.17.0'
+    implementation('com.braintreepayments.api:braintree:2.17.0') {
+      exclude module: 'visa-checkout'
+    }
 }
